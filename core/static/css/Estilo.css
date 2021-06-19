@@ -1,0 +1,21 @@
+body {
+    background: url(../img/DISEÑO/backgroud.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+ul.nav li {
+    background-color:blue;
+}
+
+ul.nav li.selected {
+    background-color: royalblue;
+}
+
+
+
+
+
+
+
+
+
