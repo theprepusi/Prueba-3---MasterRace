@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% extends 'base.html' %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    {% block titulo %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    <!--CARRUCEL-->
+    <div class="container">
+        <!--CARTAS-->
+        <div class="container justify-content-center">
+            <div class="row" style="background-color: whitesmoke; padding-top: 2%; padding-left: 2%; padding-right: 2%; padding-bottom: 2%;">
+                <div class="col-md-3">
+                    <div class="card border-dark text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <img src="../static/img/CPU/cpu intel i7.jpg" class="card-img-top" alt="...">
+                        <div class="card-header">
+                            <h5 class="card-title">Tarjeta de video AMD 6800XT OC 16 GB DDR8</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">                               
+                                Fabricante:<br>
+                                <br>
+                                Precio:<br>
+                                <br>
+                                Stock:<br>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">Agregar</a>
+                            <a href="#" class="card-link">Ver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container justify-content-center">
+                    <div class="row" style="background-color: whitesmoke; padding-top: 2%; padding-left: 2%; padding-right: 2%; padding-bottom: 2%;">
+                        <div class="col-md-3">
+                            <div class="card border-dark text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <img src="../static/img/CPU/cpu r5 3600x.jpg" class="card-img-top" alt="...">
+                                <div class="card-header">
+                                    <h5 class="card-title">Tarjeta de video AMD 6800XT OC 16 GB DDR8</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">                               
+                                        Fabricante:<br>
+                                        <br>
+                                        Precio:<br>
+                                        <br>
+                                        Stock:<br>
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="card-link">Agregar</a>
+                                    <a href="#" class="card-link">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+    {% endblock %}
+      
+
+
+
+
+
+
+
+
+    <!--SCRIPTS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
