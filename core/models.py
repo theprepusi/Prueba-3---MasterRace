@@ -1,6 +1,7 @@
 from demo.settings import TEMPLATES
 from django.db import models
 from django.db.models.fields import IntegerField
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,5 +30,12 @@ class producto(models.Model):
 
     def __str__(self):
         return  'Producto: ' + self.nombreproducto
+
+class cuenta(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        get_username = User
+        return 'Usuario: ' + self.get_username()
 
 
