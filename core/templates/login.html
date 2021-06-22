@@ -16,9 +16,6 @@
   <!--CSS-->
   <link rel="stylesheet" href="../static/css/Estilologin.css">
 
-  <!--CSS JQUERY VALIDATION ENGINE-->
-  <link rel="stylesheet" href="../Jquery/jQuery-Validation-Engine-3.0.0/css/validationEngine.jquery.css"
-    type="text/css" />
 
   <!--FONTAWESOME-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
@@ -41,18 +38,13 @@
                     <input type="text" class="validate[required] form-control" id="usuario" name="usuario"
                       placeholder="Ingrese su usuario" data-errormessage-value-missing="Nombre es obligatorio"
                       value=""
-                      data-prompt-position="bottomRight: 110,-65" />
-        
-                      <div class="alert alert-danger" role="alert" id="error-user">El usuario debe tener entre 4 y 16 carácteres</div>
-                      <div class="alert alert-danger" role="alert" id="error-user2">El usuario es obligatorio</div>
+                      data-prompt-position="bottomRight: 110,-65" />           
                   </div>
                   <div class="form-group" id="clave-group">
                     <input type="password" class="validate[required] form-control" id="clave"
                       name="clave" placeholder="Ingrese su clave" data-errormessage-value-missing="Su clave es obligatoria"
                       value=""
                       data-prompt-position="bottomRight: 110,-40" />
-                      <div class="alert alert-danger" role="alert" id="error-password">La contraseña debe tener entre 8 y 16 carácteres</div>
-                      <div class="alert alert-danger" role="alert" id="error-password2">La clave es obligatoria</div>
                   </div>
                     <!--BOTONES-->
                     <button type="submit" class="btn btn-danger" id="login"><i class="fas fa-sign-in-alt"></i>   Login</button>
@@ -62,104 +54,18 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 
   <!--SCRIPTS-->
 
-  <!--JQUERY 3.4.1-->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="../Jquery/jQuery-Validation-Engine-3.0.0/js/jquery.validationEngine.js"></script>
-  <script src="../Jquery/jQuery-Validation-Engine-3.0.0/js/languages/jquery.validationEngine-en.js"
-    type="text/javascript" charset="utf-8"></script>
+  
   <!--BOOTSTRAP AND POPPER-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-
-  <!--JqueryOn-->
-  <script type="text/javascript">
-    $(document).ready(function () {
-      console.log('Jquery funcionando')
-
-      $('#error-user').hide();
-      $('#error-user2').hide();
-      $('#error-password').hide();
-      $('#error-password2').hide();
-      $('#registro').hide();
-
-      $('#limpiar').click(function(){
-        $('#error-user').hide();
-        $('#error-user2').hide();
-        $('#error-password').hide();
-        $('#error-password2').hide();
-        $('#registro').hide(); 
-      });
-      
-      $('#login').click(function(){
-        event.preventDefault();
-        var usuario = $('#usuario').val();
-        var clave = $('#clave').val();
-          
-        if(!(usuario.length <=4 && usuario.length>=16)){
-          $('error-user').show();
-        }else{
-          $('error-user').hide();
-        }
-
-        if(usuario.length==0){
-          $('error-user2').show();
-        }else{
-          $('error-user2').hide();
-        }
-
-        console.log('usuario: ', usuario);
-
-        if(!(clave.length <=8 && clave.length>=16)){
-          $('error-password').show();
-        }else{
-          $('error-password').hide();
-        }
-
-        if(clave.length==0){
-          $('error-password2').show();
-        }else{
-          $('error-password2').hide();
-        }
-
-        console.log('clave: ', clave);
-
-      
-        var form = new FormData();
-        form.append("username", usuario);
-        form.append("password", clave);
-
-        var settings = {
-          "url": "http://nriverv.pythonanywhere.com/api/v1/signin/",
-          "method": "POST",
-          "processData": false,
-          "mimeType": "multipart/form-data",
-          "contentType": false,
-          "data": form
-        };
-
-        $.ajax(settings).done(function (response) {
-          var respuesta_json = JSON.parse(response);
-
-          windows.location = 'Home.html';
-        });   
-
-        $("#formi").validationEngine('attach', { showArrow: false, showArrowOnRadioAndCheckbox: false, showPrompts: true
-        });
-        
-      });
-
-    });
-  </script>
-              
-              
-
+             
+            
 </body>
 
 
