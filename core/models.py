@@ -8,9 +8,15 @@ class componente(models.Model):
     idcomponente = models.AutoField(primary_key=True, verbose_name='Id de componente')
     nombrecomponente = models.CharField(max_length=99, verbose_name='Nombre de componente')
 
+    def __str__(self):
+        return  'Componente: ' + self.nombrecomponente
+
 class fabricante(models.Model):
     idfabricante = models.AutoField(primary_key=True, verbose_name='Id de fabricante')
     nombrefabricante = models.CharField(max_length=99, verbose_name='Nombre de fabricante')
+
+    def __str__(self):
+        return  'Fabricante: ' + self.nombrefabricante
 
 class producto(models.Model):
     idproducto = models.AutoField(primary_key=True, verbose_name='Id de producto')
@@ -20,5 +26,8 @@ class producto(models.Model):
     precioproducto = models.IntegerField(default=0, verbose_name='Precio del producto')
     stockproducto = models.IntegerField(default=0, verbose_name='Stock del producto')
     imagenproducto = models.ImageField(null=True, blank=True, upload_to ='img', verbose_name='Imagen del producto')
+
+    def __str__(self):
+        return  'Producto: ' + self.nombreproducto
 
 
