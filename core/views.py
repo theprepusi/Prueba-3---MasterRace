@@ -1,4 +1,6 @@
+from core.forms import CuentaForm
 from django.shortcuts import render
+from .models import producto
 
 # Create your views here.
 
@@ -33,4 +35,28 @@ def ram(request):
     return render(request, 'ram.html', {})
     
 def ssd(request):
-    return render(request, 'ssd.html', {})                    
+    return render(request, 'ssd.html', {})
+
+def home(request):
+    productos = producto.objects.all()
+    datos = {
+        'productos': productos
+    }
+    return render(request, 'home.html', datos)
+
+def form_cuenta(request):
+    datos = {
+        'formi': CuentaForm()
+    }
+
+    if request.method == 'POST':
+
+        formulario = CuentaForm(request.POST)
+
+        if formulario.is_valid:
+
+            formulario.save()
+
+            datos['mensaje'] = "Logeo éxitoso"
+
+    return render(request, 'login.html', datos)

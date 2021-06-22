@@ -35,7 +35,9 @@
                     <img src="../static/img/DISEÑO/user-signin.png">
                 </div>
                 <form class="col-12" method="post" action="" id="formi">
+                  {% csrf_token %}
                   <div class="form-group" id="nombre-group">
+                  {{ form.as_table }}  
                     <input type="text" class="validate[required] form-control" id="usuario" name="usuario"
                       placeholder="Ingrese su usuario" data-errormessage-value-missing="Nombre es obligatorio"
                       value=""

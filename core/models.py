@@ -26,16 +26,19 @@ class producto(models.Model):
     componenteproducto = models.ForeignKey(componente, on_delete=models.CASCADE, verbose_name='Componente de producto')
     precioproducto = models.IntegerField(default=0, verbose_name='Precio del producto')
     stockproducto = models.IntegerField(default=0, verbose_name='Stock del producto')
-    imagenproducto = models.ImageField(null=True, blank=True, upload_to ='img', verbose_name='Imagen del producto')
+
+    def ruta(self, filename):
+        return f'productos/{self.idproducto}/{filename}'
+    imagenproducto = models.ImageField(null=True, blank=True, upload_to = ruta, verbose_name='Imagen del producto', max_length = 9999)    
 
     def __str__(self):
         return  'Producto: ' + self.nombreproducto
 
 class cuenta(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    password = models.OneToOneField(password, on_delete=models.CASCADE)
 
     def __str__(self):
-        get_username = User
-        return 'Usuario: ' + self.get_username()
+        return self.usuario.username
 
 
